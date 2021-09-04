@@ -4,7 +4,7 @@ Recognize the Gesture for DVS sensors using Event Clound Method
 This tensorflow code is modified from: [[qwang014/EVclouds_gesture_recognition](https://github.com/qwang014/EVclouds_gesture_recognition)], which is the code of [[Space-time event clouds for gesture recognition: From RGB cameras to event cameras
 ](https://cse.buffalo.edu/~jsyuan/papers/2019/WACV_2019_Qinyi.pdf)], Wang Q, Zhang Y, Yuan J, et al. 2019 IEEE Winter Conference on Applications of Computer Vision (WACV). IEEE, 2019: 1826-1835. 
 
-As the original code does not provide detailed document. Here, I try to give a more detailed introduction. But current code can only achieve 20% accuracy on the Gesture Recognition dataset (IBM). There, still debugging ... 
+As the original code does not provide detailed document. Here, I try to give a more detailed introduction. But current code can only achieve 20% accuracy on the Gesture Recognition dataset (IBM). Therefore, still debugging ... 
 
 
 ## Environment 
