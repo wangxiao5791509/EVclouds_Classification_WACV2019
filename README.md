@@ -8,7 +8,7 @@ As the original code does not provide detailed document. Here, I try to give a m
 
 
 ## Environment 
-
+```
 conda create -n evclound python=2.7
 conda activate evclound 
 
@@ -18,12 +18,23 @@ conda install -c anaconda tensorflow-gpu==1.0.1
 
 git clone https://github.com/wangxiao5791509/EVclouds_Classification_WACV2019 
 cd EVclouds_Classification_WACV2019 
+```
 
 ## Download and pre-process the dataset: 
 1. Download the Gesture Recognition dataset from: [[IBM-Gesture-DVS](https://www.research.ibm.com/interactive/dvsgesture/)] 
 2. Unzip the file and move it into the main folder: DVS_Gesture_dataset_IBM 
-3. cd data_preparation, and run the generate_train_data.py and generate_test_data.py. It will generate the following files: 
+3. cd data_preparation, and run the generate_train_data.py and generate_test_data.py. 
 
+```
+cd data_preparation 
+python2.7 generate_train_data.py
+python2.7 generate_test_data.py
+```
+
+
+It will generate the following files: 
+
+```
 /home/wangxiao/Documents/projects/EVclouds_WACV2019/data_preparation/C10_TS1_1024/W05S025/
 train_0.h5
 train_1.h5
@@ -33,6 +44,7 @@ train_4.h5
 train_5.h5
 train_6.h5
 test_0.h5
+```
 
 
 ## Training 
@@ -41,16 +53,22 @@ test_0.h5
 
 First of all, you need to change the path of **cuda** and **tensorflow** for all the following .sh files. For example, I use cuda-11.2, python2.7, tensorflow path is "/home/wangxiao/anaconda3/envs/evclound/lib/python2.7/site-packages/tensorflow/include". 
 
+```
 cd tf_ops/3d_interpolation && sh tf_interpolate_compile.sh 
 cd ../grouping && sh tf_grouping_compile.sh 
 cd ../sampling && sh tf_sampling_compile.sh 
 cd ../../
+```
 
 **2. Change the path in the provider.py (line 91) with your own path**: 
+```
 f = h5py.File("/home/wangxiao/Documents/projects/EVclouds_WACV2019/data_preparation/C10_TS1_1024/W05S025/" + h5_filename) 
+```
 
 **3. Run the train.py**:
+```
 python2.7 train.py 
+
 Tensor("Placeholder_2:0", shape=(), dtype=bool, device=/device:GPU:0)
 **** EPOCH 000 ****
 ----train file 0-----
@@ -79,12 +97,14 @@ accuracy: 0.136194
 train_4.h5
 mean loss: 2.681318
 accuracy: 0.125250
-
+```
 
 
 
 ## Testing 
+```
 tensorboard --logdir=/home/wangxiao/Documents/projects/EVclouds_WACV2019/log/train/
+```
 
 ![fig-1](https://github.com/wangxiao5791509/EVclouds_Classification_WACV2019/blob/main/Screenshot%20from%202021-09-04%2008-54-08.png)
 
