@@ -1,10 +1,12 @@
 # EVclouds_Classification_WACV2019
 Recognize the Gesture for DVS sensors using Event Clound Method
 
-This tensorflow code is modified from: [[qwang014/EVclouds_gesture_recognition](https://github.com/qwang014/EVclouds_gesture_recognition)], which is the code of [[Space-time event clouds for gesture recognition: From RGB cameras to event cameras
+[**Note**] This tensorflow code is modified from: [[qwang014/EVclouds_gesture_recognition](https://github.com/qwang014/EVclouds_gesture_recognition)], which is the code of [[Space-time event clouds for gesture recognition: From RGB cameras to event cameras
 ](https://cse.buffalo.edu/~jsyuan/papers/2019/WACV_2019_Qinyi.pdf)], Wang Q, Zhang Y, Yuan J, et al. 2019 IEEE Winter Conference on Applications of Computer Vision (WACV). IEEE, 2019: 1826-1835. 
 
 As the original code does not provide detailed document. Here, I try to give a more detailed introduction. But current code can only achieve 20% accuracy on the Gesture Recognition dataset (IBM). Therefore, still debugging ... 
+
+![fig-1](https://github.com/wangxiao5791509/EVclouds_Classification_WACV2019/blob/main/Screenshot%20from%202021-09-04%2009-03-06.png)
 
 
 ## Environment 
@@ -103,6 +105,9 @@ accuracy: 0.125250
 
 ## Testing 
 ```
+python2.7 evaluate.py
+
+You can check the training curves with the following script: 
 tensorboard --logdir=/home/wangxiao/Documents/projects/EVclouds_WACV2019/log/train/
 ```
 
@@ -124,31 +129,5 @@ If you find the code useful for your research, please cite their paper:
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
